@@ -1,0 +1,9 @@
+---------------1. Used to create a file a folder using terminal--------------------------------
+New-Item -Path .\app\__init__.py -ItemType File
+
+-----------------2. Required Dependencies-------------------------------------------------------
+uv add "fastapi[standard]" pydantic-settings python-dotenv "psycopg[binary]" google-api-python-client google-auth "pydantic-ai-slim[anthropic]"
+uv add --dev google-auth-oauthlib pydantic-evals ipykernel nest-asyncio
+uv add --dev ipykernel
+Copy-Item .env.example .env
+uv run fastapi dev app/main.py
